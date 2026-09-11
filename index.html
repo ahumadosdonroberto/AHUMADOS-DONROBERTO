@@ -18,24 +18,22 @@ header{background:var(--negro); color:#fff; padding:15px 0; position:sticky; top
 .logo-text{font-size:1.3rem; font-weight:900; color:var(--oro);}
 .nav-links{display:flex; gap:25px; list-style:none;}
 .nav-links a{color:#fff; text-decoration:none; font-weight:700;}
-.nav-links a:hover{color:var(--oro);}
-.header-actions{display:flex; align-items:center; gap:15px;}
 #cart-btn{background:var(--oro); color:#000; padding:10px 20px; border:none; font-weight:900; cursor:pointer; border-radius:5px; position:relative;}
 .cart-badge{position:absolute; top:-8px; right:-8px; background:var(--rojo); color:#fff; border-radius:50%; width:22px; height:22px; font-size:0.8rem; display:flex; align-items:center; justify-content:center;}
 .hamburger{display:none; flex-direction:column; cursor:pointer; gap:5px;}
 .hamburger span{width:25px; height:3px; background:var(--oro);}
 
-/* HERO + BADGES */
+/* HERO */
 .hero{background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200') center/cover; height:70vh; display:flex; align-items:center; justify-content:center; text-align:center; color:#fff; padding:20px;}
 .hero h1{font-size:3rem; color:var(--oro); margin-bottom:15px;}
 .badges{display:grid; grid-template-columns:repeat(4,1fr); gap:20px; text-align:center; margin-top:40px; max-width:800px; margin:40px auto 0;}
 .badge{background:#fff; padding:20px; border-radius:8px; border:2px solid var(--oro); color:#000;}
-.badge h4{color:var(--oro); margin-bottom:5px;}
 
 /* SECCIONES */
 section{padding:60px 20px; max-width:1200px; margin:0 auto;}
 h2{text-align:center; font-size:2.2rem; margin-bottom:40px;}
-.btn{background:var(--oro); color:#000; padding:14px 30px; font-weight:900; border:none; cursor:pointer; border-radius:5px; text-decoration:none; display:inline-block;}
+.btn{background:var(--oro); color:#000; padding:14px 30px; font-weight:900; border:none; cursor:pointer; border-radius:5px; text-decoration:none; display:inline-block; font-size:0.9rem;}
+.btn-peque{padding:8px 15px; font-size:0.85rem;}
 .btn-verde{background:var(--verde); color:#fff;}
 
 /* PRODUCTOS */
@@ -45,10 +43,17 @@ h2{text-align:center; font-size:2.2rem; margin-bottom:40px;}
 .etiqueta{position:absolute; top:10px; left:10px; background:var(--verde); color:#fff; padding:5px 10px; font-size:0.8rem; font-weight:900; border-radius:5px;}
 .precio{font-size:1.5rem; color:var(--oro); font-weight:900; margin:10px 0;}
 
+/* LISTA DE PRECIOS NUEVA */
+.tabla-precios{background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 4px 15px rgba(0,0,0,0.1); border:2px solid var(--oro);}
+.tabla-precios table{width:100%; border-collapse:collapse;}
+.tabla-precios th{background:var(--negro); color:var(--oro); padding:15px; text-align:left; font-weight:900;}
+.tabla-precios td{padding:15px; border-bottom:1px solid #eee;}
+.tabla-precios tr:hover{background:#FFF8E1;}
+.precio-tabla{color:var(--oro); font-weight:900; font-size:1.1rem;}
+
 /* TESTIMONIOS */
 .testimonios{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
 .testimonial{background:#fff; padding:20px; border-radius:10px; border-left:4px solid var(--oro);}
-.stars{color:#FFD700;}
 
 /* CONTACTO */
 .contactos{display:grid; grid-template-columns:1fr 1fr; gap:20px; max-width:700px; margin:30px auto;}
@@ -74,40 +79,30 @@ input, textarea{width:100%; padding:12px; margin:10px 0; border:2px solid #ccc; 
 .cart-item{display:flex; justify-content:space-between; margin:15px 0; border-bottom:1px solid #eee; padding-bottom:10px;}
 .cart-total{font-size:1.6rem; font-weight:900; color:var(--oro);}
 
-/* CHAT BOX */
-#chat-button{position:fixed; bottom:170px; right:25px; background:var(--oro); color:#000; width:65px; height:65px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:30px; cursor:pointer; z-index:996; font-weight:900;}
+/* CHAT + WHATSAPP */
+#chat-button{position:fixed; bottom:170px; right:25px; background:var(--oro); color:#000; width:65px; height:65px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:30px; cursor:pointer; z-index:996;}
 #chat-box{position:fixed; bottom:170px; right:25px; width:320px; height:420px; background:#1a1a1a; border:2px solid var(--oro); border-radius:10px; display:none; flex-direction:column; z-index:996;}
 #chat-header{background:var(--oro); color:#000; padding:12px; font-weight:900; display:flex; justify-content:space-between;}
-#chat-messages{flex:1; padding:10px; overflow-y:auto; color:#fff;}
-
-/* 2 WHATSAPP FLOTANTES */
 .whatsapp-float{position:fixed; bottom:25px; right:25px; background:var(--whatsapp); color:#fff; width:65px; height:65px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:35px; text-decoration:none; z-index:997;}
 .whatsapp-float-2{bottom:100px;}
 
 footer{background:#000; color:#888; text-align:center; padding:40px; border-top:3px solid var(--oro);}
 
-/* RESPONSIVE CELULAR */
+/* RESPONSIVE */
 @media(max-width:768px){
 .hero h1{font-size:2rem;}
-.nav{padding:0 15px;}
-.logo-text{font-size:1.1rem;}
 .nav-links{position:fixed; top:70px; right:-100%; width:100%; height:100vh; background:#1A1A1A; flex-direction:column; padding:30px; transition:0.3s;}
 .nav-links.active{right:0;}.hamburger{display:flex;}
 #cart-sidebar{width:100%; right:-100%;}
 .checkout-grid{grid-template-columns:1fr;}
-.metodos-pago{grid-template-columns:1fr;}
+.tabla-precios{overflow-x:auto;} /* Para que la tabla se pueda deslizar */
+.tabla-precios table{min-width:500px;}
 .badges{grid-template-columns:repeat(2,1fr);}
 .testimonios{grid-template-columns:1fr;}
 .contactos{grid-template-columns:1fr;}
 .whatsapp-float{width:55px; height:55px; font-size:28px; bottom:20px; right:15px;}
 .whatsapp-float-2{bottom:85px; right:15px;}
 #chat-button{width:55px; height:55px; font-size:25px; bottom:150px; right:15px;}
-#chat-box{width:90%; right:5%; bottom:150px;}
-}
-@media(max-width:480px){
-.hero h1{font-size:1.7rem;}
-.btn{padding:12px 20px; font-size:0.9rem;}
-.precio{font-size:1.3rem;}
 }
 </style>
 </head>
@@ -123,6 +118,7 @@ footer{background:#000; color:#888; text-align:center; padding:40px; border-top:
     <ul class="nav-links" id="nav-links">
       <li><a href="#inicio">Inicio</a></li>
       <li><a href="#productos">Productos</a></li>
+      <li><a href="#precios">Precios</a></li>
       <li><a href="#nosotros">Nosotros</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
@@ -136,7 +132,6 @@ footer{background:#000; color:#888; text-align:center; padding:40px; border-top:
 <section class="hero" id="inicio">
   <div>
     <h1>EL SABOR TRADICIONAL AHUMADO</h1>
-    <p>Envío a todo Tarapoto | Pago contra entrega</p>
     <a href="#productos" class="btn">VER CATÁLOGO</a>
     <div class="badges">
       <div class="badge"><h4>100%</h4><p>Artesanal</p></div>
@@ -148,7 +143,7 @@ footer{background:#000; color:#888; text-align:center; padding:40px; border-top:
 </section>
 
 <section id="productos">
-  <h2>NUESTROS PRODUCTOS</h2>
+  <h2>PRODUCTOS DESTACADOS</h2>
   <div class="grid-prod">
     <div class="card">
       <span class="etiqueta">MÁS VENDIDO</span>
@@ -166,6 +161,62 @@ footer{background:#000; color:#888; text-align:center; padding:40px; border-top:
   </div>
 </section>
 
+<!-- NUEVA SECCIÓN LISTA DE PRECIOS -->
+<section id="precios">
+  <h2>LISTA DE PRECIOS</h2>
+  <div class="tabla-precios">
+    <table>
+      <thead>
+        <tr>
+          <th>PRODUCTO</th>
+          <th>PESO</th>
+          <th>PRECIO</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Cecina Ahumada Premium</b></td>
+          <td>500g</td>
+          <td class="precio-tabla">S/ 38.00</td>
+          <td><button class="btn btn-peque" onclick="addToCart('Cecina Ahumada Premium 500g', 38)">+</button></td>
+        </tr>
+        <tr>
+          <td><b>Cecina Ahumada Premium</b></td>
+          <td>1kg</td>
+          <td class="precio-tabla">S/ 72.00</td>
+          <td><button class="btn btn-peque" onclick="addToCart('Cecina Ahumada Premium 1kg', 72)">+</button></td>
+        </tr>
+        <tr>
+          <td><b>Chorizo Ahumado Casero</b></td>
+          <td>500g</td>
+          <td class="precio-tabla">S/ 28.00</td>
+          <td><button class="btn btn-peque" onclick="addToCart('Chorizo Ahumado Casero 500g', 28)">+</button></td>
+        </tr>
+        <tr>
+          <td><b>Chorizo Ahumado Casero</b></td>
+          <td>1kg</td>
+          <td class="precio-tabla">S/ 52.00</td>
+          <td><button class="btn btn-peque" onclick="addToCart('Chorizo Ahumado Casero 1kg', 52)">+</button></td>
+        </tr>
+        <tr>
+          <td><b>Tocino Ahumado</b></td>
+          <td>500g</td>
+          <td class="precio-tabla">S/ 32.00</td>
+          <td><button class="btn btn-peque" onclick="addToCart('Tocino Ahumado 500g', 32)">+</button></td>
+        </tr>
+        <tr>
+          <td><b>Costillas Ahumadas BBQ</b></td>
+          <td>1kg</td>
+          <td class="precio-tabla">S/ 45.00</td>
+          <td><button class="btn btn-peque" onclick="addToCart('Costillas Ahumadas BBQ 1kg', 45)">+</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="text-align:center; margin-top:15px; color:#666;">* Delivery: Tarapoto S/10 | Morales S/15 | La Banda S/20</p>
+</section>
+
 <section id="nosotros">
   <h2>LA TRADICIÓN DE DON ROBERTO</h2>
   <p style="text-align:center;">Más de 10 años ahumando con pasión. 100% Artesanal y Natural.</p>
@@ -174,9 +225,9 @@ footer{background:#000; color:#888; text-align:center; padding:40px; border-top:
 <section id="testimonios">
   <h2>LO QUE DICEN NUESTROS CLIENTES</h2>
   <div class="testimonios">
-    <div class="testimonial"><div class="stars">★★★</div><p>"La mejor cecina de Tarapoto. Sabor único!"</p><b>- María G.</b></div>
-    <div class="testimonial"><div class="stars">★★★★★</div><p>"Llega rapidísimo y súper bien empaquetado"</p><b>- Juan P.</b></div>
-    <div class="testimonial"><div class="stars">★★★★★</div><p>"100% recomendado. Calidad premium"</p><b>- Rosa L.</b></div>
+    <div class="testimonial"><div style="color:#FFD700;">★★★</div><p>"La mejor cecina de Tarapoto. Sabor único!"</p><b>- María G.</b></div>
+    <div class="testimonial"><div style="color:#FFD700;">★★★★★</div><p>"Llega rapidísimo y súper bien empaquetado"</p><b>- Juan P.</b></div>
+    <div class="testimonial"><div style="color:#FFD700;">★★★</div><p>"100% recomendado. Calidad premium"</p><b>- Rosa L.</b></div>
   </div>
 </section>
 
@@ -203,7 +254,6 @@ footer{background:#000; color:#888; text-align:center; padding:40px; border-top:
           <option value="La Banda de Shilcayo" data-delivery="20">La Banda - S/ 20.00</option>
         </select>
         <input type="text" id="direccion" placeholder="DIRECCIÓN COMPLETA *" required>
-        <textarea id="notas" placeholder="REFERENCIA" rows="2"></textarea>
         <h3 style="margin-top:20px;">💳 2. Método de Pago</h3>
         <div class="metodos-pago">
           <div class="metodo-pago" onclick="selectPayment('yape')"><h4>🟣 YAPE</h4><div class="qr-box" id="qr-yape"><img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=935986861"><p><b>935 986 861</b></p></div></div>
@@ -218,7 +268,7 @@ footer{background:#000; color:#888; text-align:center; padding:40px; border-top:
   </div>
 </section>
 
-<footer><p><b>AHUMADOS DON ROBERTO</b></p><p>Pedidos: 935 986 861 | Consultas: 969 751 913</p><p>© 2026</p></footer>
+<footer><p><b>AHUMADOS DON ROBERTO</b></p><p>Pedidos: 935 986 861 | Consultas: 969 751 913</p></footer>
 
 <div id="cart-sidebar">
   <span id="close-cart" style="float:right; font-size:2.5rem; cursor:pointer;">&times;</span>
@@ -229,22 +279,17 @@ footer{background:#000; color:#888; text-align:center; padding:40px; border-top:
 </div>
 
 <div id="chat-button">💬</div>
-<div id="chat-box">
-  <div id="chat-header"><span>ASISTENTE</span><span id="close-chat" style="cursor:pointer;">X</span></div>
-  <div id="chat-messages"><p><b>Bot:</b> Hola! 👋<br>1. Ver Productos<br>2. Precios<br>3. Delivery<br>4. Hablar con asesor</p></div>
-</div>
+<div id="chat-box"><div id="chat-header"><span>ASISTENTE</span><span id="close-chat" style="cursor:pointer;">X</span></div></div>
 
-<a href="https://wa.me/51935986861" target="_blank" class="whatsapp-float" title="Pedidos">📦</a>
-<a href="https://wa.me/51969751913" target="_blank" class="whatsapp-float whatsapp-float-2" title="Consultas">💬</a>
+<a href="https://wa.me/51935986861" target="_blank" class="whatsapp-float">📦</a>
+<a href="https://wa.me/51969751913" target="_blank" class="whatsapp-float whatsapp-float-2">💬</a>
 
 <script>
-// MENÚ
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
 hamburger.onclick = () => navLinks.classList.toggle('active');
 document.querySelectorAll('.nav-links a').forEach(link => {link.onclick = () => navLinks.classList.remove('active');});
 
-// CARRITO + DELIVERY + WHATSAPP
 let cart = [];
 let selectedPayment = '';
 let deliveryCost = 0;
@@ -296,7 +341,6 @@ document.getElementById('order-form').onsubmit = function(e){
   cart = []; deliveryCost = 0; updateCart();
 }
 
-// CHAT
 document.getElementById('chat-button').onclick = () => document.getElementById('chat-box').style.display = 'flex';
 document.getElementById('close-chat').onclick = () => document.getElementById('chat-box').style.display = 'none';
 </script>
