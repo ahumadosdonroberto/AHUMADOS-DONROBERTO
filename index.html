@@ -3,71 +3,59 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AHUMADOS DON ROBERTO | Cecina, Chorizo y Más</title>
+<title>AHUMADOS DON ROBERTO</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box; scroll-behavior:smooth;}
 body{font-family:'Arial',sans-serif;background:#F8F5F0;color:#2C2C2C;}
 :root{--oro:#C9A961; --negro:#1A1A1A; --whatsapp:#25D366; --verde:#2E7D32;}
 
-/* HEADER + MENÚ */
 header{background:var(--negro); color:#fff; padding:15px 0; position:sticky; top:0; z-index:100; border-bottom:3px solid var(--oro);}
 .nav{max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; padding:0 20px;}
-.logo-text{font-size:1.4rem; font-weight:900; color:var(--oro);}
+
+/* LOGO */
+.logo-header{display:flex; align-items:center; gap:12px;}
+.logo-img{width:50px; height:50px; border-radius:50%; border:2px solid var(--oro); background:#fff; object-fit:cover;}
+.logo-fallback{width:50px; height:50px; border-radius:50%; background:var(--oro); display:flex; align-items:center; justify-content:center; font-weight:900; color:#000; font-size:1.2rem;}
+.logo-text{font-size:1.3rem; font-weight:900; color:var(--oro);}
+
 .nav-links{display:flex; gap:25px; list-style:none;}
 .nav-links a{color:#fff; text-decoration:none; font-weight:700;}
-.nav-links a:hover{color:var(--oro);}
 .header-actions{display:flex; align-items:center; gap:15px;}
 #cart-btn{background:var(--oro); color:#000; padding:10px 20px; border:none; font-weight:900; cursor:pointer; border-radius:5px;}
 .hamburger{display:none; flex-direction:column; cursor:pointer; gap:5px;}
 .hamburger span{width:25px; height:3px; background:var(--oro);}
 @media(max-width:768px){
- .nav-links{position:fixed; top:70px; right:-100%; width:70%; height:100vh; background:#1A1A1A; flex-direction:column; padding:30px; transition:0.3s;}
- .nav-links.active{right:0;}
- .hamburger{display:flex;}
+.nav-links{position:fixed; top:70px; right:-100%; width:70%; height:100vh; background:#1A1A1A; flex-direction:column; padding:30px; transition:0.3s;}
+.nav-links.active{right:0;}
+.hamburger{display:flex;}
 }
 
-/* HERO */
 .hero{background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200') center/cover; height:70vh; display:flex; align-items:center; justify-content:center; text-align:center; color:#fff;}
 .hero h1{font-size:3rem; color:var(--oro);}
-
-/* SECCIONES */
 section{padding:60px 20px; max-width:1200px; margin:0 auto;}
 h2{text-align:center; font-size:2.2rem; margin-bottom:40px;}
 .btn{background:var(--oro); color:#000; padding:14px 30px; font-weight:900; border:none; cursor:pointer; border-radius:5px; text-decoration:none; display:inline-block;}
 .btn-verde{background:var(--verde); color:#fff;}
-
-/* PRODUCTOS */
 .grid-prod{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:25px;}
 .card{background:#fff; padding:20px; text-align:center; border-radius:8px;}
 .precio{font-size:1.5rem; color:var(--oro); font-weight:900;}
-
-/* CONTACTOS */
 .contactos{display:grid; grid-template-columns:1fr 1fr; gap:20px; max-width:700px; margin:30px auto;}
 .contacto-box{background:#fff; padding:25px; border-radius:10px; text-align:center; border:2px solid var(--oro);}
-
-/* CHECKOUT */
 #checkout-section{display:none; background:#fff; padding:40px; border-radius:10px; border:3px solid var(--oro); max-width:700px; margin:40px auto;}
 .metodos-pago{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
 .metodo-pago{border:3px solid #ddd; padding:20px; border-radius:10px; text-align:center; cursor:pointer;}
 .metodo-pago.active{border-color:var(--oro); background:#FFF8E1;}
 .qr-box{display:none;}.qr-box img{width:200px; border:3px solid var(--oro);}
 input{width:100%; padding:12px; margin:10px 0; border:2px solid #ccc; border-radius:5px;}
-
-/* CARRITO */
 #cart-sidebar{position:fixed; top:0; right:-400px; width:400px; height:100%; background:#fff; transition:0.3s; z-index:999; padding:25px; overflow-y:auto;}
 #cart-sidebar.active{right:0;}
 .cart-total{font-size:1.6rem; font-weight:900; color:var(--oro);}
-
-/* CHAT BOX */
-#chat-button{position:fixed; bottom:170px; right:25px; background:var(--oro); color:#000; width:65px; height:65px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:30px; cursor:pointer; z-index:996; font-weight:900;}
+#chat-button{position:fixed; bottom:170px; right:25px; background:var(--oro); color:#000; width:65px; height:65px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:30px; cursor:pointer; z-index:996;}
 #chat-box{position:fixed; bottom:170px; right:25px; width:320px; height:420px; background:#1a1a1a; border:2px solid var(--oro); border-radius:10px; display:none; flex-direction:column; z-index:996;}
 #chat-header{background:var(--oro); color:#000; padding:12px; font-weight:900; display:flex; justify-content:space-between;}
-#chat-messages{flex:1; padding:10px; overflow-y:auto; color:#fff; font-size:0.9rem;}
-
-/* 2 BOTONES WHATSAPP FLOTANTES */
+#chat-messages{flex:1; padding:10px; overflow-y:auto; color:#fff;}
 .whatsapp-float{position:fixed; bottom:25px; right:25px; background:var(--whatsapp); color:#fff; width:65px; height:65px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:35px; text-decoration:none; z-index:997;}
 .whatsapp-float-2{bottom:100px;}
-
 footer{background:#000; color:#888; text-align:center; padding:40px; border-top:3px solid var(--oro);}
 @media(max-width:768px){#cart-sidebar{width:100%; right:-100%;}.contactos{grid-template-columns:1fr;}}
 </style>
@@ -76,7 +64,13 @@ footer{background:#000; color:#888; text-align:center; padding:40px; border-top:
 
 <header>
   <div class="nav">
-    <div class="logo-text">AHUMADOS DON ROBERTO</div>
+    <!-- LOGO CON FALLBACK -->
+    <div class="logo-header">
+      <img src="logo-donroberto.jpg" alt="Logo" class="logo-img" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='flex';">
+      <div id="logo-fallback" class="logo-fallback" style="display:none;">DR</div>
+      <div class="logo-text">AHUMADOS DON ROBERTO</div>
+    </div>
+
     <ul class="nav-links" id="nav-links">
       <li><a href="#inicio">Inicio</a></li>
       <li><a href="#productos">Productos</a></li>
@@ -91,66 +85,34 @@ footer{background:#000; color:#888; text-align:center; padding:40px; border-top:
 </header>
 
 <section class="hero" id="inicio">
-  <div>
-    <h1>EL SABOR TRADICIONAL AHUMADO</h1>
-    <a href="#productos" class="btn">VER PRODUCTOS</a>
-  </div>
+  <div><h1>EL SABOR TRADICIONAL AHUMADO</h1><a href="#productos" class="btn">VER PRODUCTOS</a></div>
 </section>
 
 <section id="productos">
   <h2>NUESTROS PRODUCTOS</h2>
   <div class="grid-prod">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?q=80&w=400">
-      <h3>Cecina Ahumada Premium</h3>
-      <div class="precio">S/ 38.00</div>
-      <button class="btn" onclick="addToCart('Cecina Ahumada Premium', 38)">Añadir</button>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1615937657715-bc7b4b7b4c8e?q=80&w=400">
-      <h3>Chorizo Ahumado Casero</h3>
-      <div class="precio">S/ 28.00</div>
-      <button class="btn" onclick="addToCart('Chorizo Ahumado Casero', 28)">Añadir</button>
-    </div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?q=80&w=400"><h3>Cecina Ahumada Premium</h3><div class="precio">S/ 38.00</div><button class="btn" onclick="addToCart('Cecina Ahumada Premium', 38)">Añadir</button></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1615937657715-bc7b4b7b4c8e?q=80&w=400"><h3>Chorizo Ahumado Casero</h3><div class="precio">S/ 28.00</div><button class="btn" onclick="addToCart('Chorizo Ahumado Casero', 28)">Añadir</button></div>
   </div>
 </section>
 
-<section id="nosotros">
-  <h2>LA TRADICIÓN DE DON ROBERTO</h2>
-  <p style="text-align:center;">Más de 10 años ahumando con pasión. 100% Artesanal y Natural.</p>
-</section>
+<section id="nosotros"><h2>LA TRADICIÓN DE DON ROBERTO</h2><p style="text-align:center;">Más de 10 años ahumando con pasión. 100% Artesanal y Natural.</p></section>
 
-<!-- SECCIÓN CONTACTO CON LOS 2 NÚMEROS -->
 <section id="contacto">
   <h2>CONTÁCTANOS</h2>
   <div class="contactos">
-    <div class="contacto-box">
-      <h4>📦 PEDIDOS</h4>
-      <p>Para comprar y delivery</p>
-      <a href="https://wa.me/51935986861" target="_blank" class="btn" style="margin-top:10px;">935 986 861</a>
-    </div>
-    <div class="contacto-box">
-      <h4>💬 CONSULTAS</h4>
-      <p>Horarios, precios, info</p>
-      <a href="https://wa.me/51969751913" target="_blank" class="btn" style="margin-top:10px;">969 751 913</a>
-    </div>
+    <div class="contacto-box"><h4>📦 PEDIDOS</h4><a href="https://wa.me/51935986861" target="_blank" class="btn">935 986 861</a></div>
+    <div class="contacto-box"><h4>💬 CONSULTAS</h4><a href="https://wa.me/51969751913" target="_blank" class="btn">969 751 913</a></div>
   </div>
 </section>
 
-<!-- CHECKOUT -->
 <section id="checkout-section">
   <h3>FINALIZAR COMPRA</h3>
   <div class="order-summary" id="order-summary"></div>
   <h4>Elige método de pago:</h4>
   <div class="metodos-pago">
-    <div class="metodo-pago" onclick="selectPayment('yape')">
-      <h4>🟣 YAPE</h4>
-      <div class="qr-box" id="qr-yape"><img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=935986861"><p><b>935 986 861</b></p></div>
-    </div>
-    <div class="metodo-pago" onclick="selectPayment('plin')">
-      <h4>🟢 PLIN</h4>
-      <div class="qr-box" id="qr-plin"><img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=935986861"><p><b>935 986 861</b></p></div>
-    </div>
+    <div class="metodo-pago" onclick="selectPayment('yape')"><h4>🟣 YAPE</h4><div class="qr-box" id="qr-yape"><img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=935986861"><p><b>935 986 861</b></p></div></div>
+    <div class="metodo-pago" onclick="selectPayment('plin')"><h4>🟢 PLIN</h4><div class="qr-box" id="qr-plin"><img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=935986861"><p><b>935 986 861</b></p></div></div>
   </div>
   <form id="order-form">
     <input type="text" id="nombre" placeholder="TU NOMBRE" required>
@@ -161,50 +123,22 @@ footer{background:#000; color:#888; text-align:center; padding:40px; border-top:
   </form>
 </section>
 
-<footer>
-  <p><b>AHUMADOS DON ROBERTO</b></p>
-  <p>Pedidos: 935 986 861 | Consultas: 969 751 913</p>
-  <p>© 2026</p>
-</footer>
+<footer><p><b>AHUMADOS DON ROBERTO</b></p><p>Pedidos: 935 986 861 | Consultas: 969 751 913</p><p>© 2026</p></footer>
 
-<!-- CARRITO -->
-<div id="cart-sidebar">
-  <span id="close-cart" style="float:right; font-size:2.5rem; cursor:pointer;">&times;</span>
-  <h2>Tu Carrito</h2>
-  <div id="cart-items"></div>
-  <div class="cart-total">Total: S/ <span id="cart-total">0.00</span></div>
-  <button class="btn btn-verde" onclick="showCheckout()" style="width:100%;">FINALIZAR COMPRA</button>
-</div>
+<div id="cart-sidebar"><span id="close-cart" style="float:right; font-size:2.5rem; cursor:pointer;">&times;</span><h2>Tu Carrito</h2><div id="cart-items"></div><div class="cart-total">Total: S/ <span id="cart-total">0.00</span></div><button class="btn btn-verde" onclick="showCheckout()" style="width:100%;">FINALIZAR COMPRA</button></div>
 
-<!-- CHAT BOX -->
 <div id="chat-button">💬</div>
-<div id="chat-box">
-  <div id="chat-header"><span>ASISTENTE</span><span id="close-chat" style="cursor:pointer;">X</span></div>
-  <div id="chat-messages">
-    <p><b>Bot:</b> Hola! Bienvenido a AHUMADOS DON ROBERTO 👋<br><br>
-    Escribe:<br>
-    1. Ver Productos<br>
-    2. Horarios<br>
-    3. Delivery<br>
-    4. Hablar con asesor</p>
-  </div>
-  <div style="padding:10px; display:flex;"><input id="chat-input" type="text" placeholder="Escribe 1-4" style="flex:1;"><button id="send-chat">></button></div>
-</div>
+<div id="chat-box"><div id="chat-header"><span>ASISTENTE</span><span id="close-chat" style="cursor:pointer;">X</span></div><div id="chat-messages"><p><b>Bot:</b> Hola! Bienvenido<br>1. Productos<br>2. Horarios<br>3. Delivery<br>4. Asesor</p></div><div style="padding:10px; display:flex;"><input id="chat-input" type="text" placeholder="Escribe 1-4" style="flex:1;"><button id="send-chat">></button></div></div>
 
-<!-- 2 BOTONES WHATSAPP FLOTANTES -->
-<a href="https://wa.me/51935986861" target="_blank" class="whatsapp-float" title="Pedidos">📦</a>
-<a href="https://wa.me/51969751913" target="_blank" class="whatsapp-float whatsapp-float-2" title="Consultas">💬</a>
+<a href="https://wa.me/51935986861" target="_blank" class="whatsapp-float">📦</a>
+<a href="https://wa.me/51969751913" target="_blank" class="whatsapp-float whatsapp-float-2">💬</a>
 
 <script>
-// MENÚ HAMBURGUESA
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
 hamburger.onclick = () => navLinks.classList.toggle('active');
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.onclick = () => navLinks.classList.remove('active');
-});
+document.querySelectorAll('.nav-links a').forEach(link => {link.onclick = () => navLinks.classList.remove('active');});
 
-// CARRITO
 let cart = [];
 let selectedPayment = '';
 const WHATSAPP_PEDIDOS = '51935986861';
@@ -263,7 +197,6 @@ document.getElementById('order-form').onsubmit = function(e){
   window.open(`https://wa.me/${WHATSAPP_PEDIDOS}?text=${message}`, '_blank');
 }
 
-// CHAT BOX
 document.getElementById('chat-button').onclick = () => document.getElementById('chat-box').style.display = 'flex';
 document.getElementById('close-chat').onclick = () => document.getElementById('chat-box').style.display = 'none';
 </script>
